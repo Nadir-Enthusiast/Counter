@@ -1,63 +1,302 @@
-body {
-    font-size: 30px;
-    font-family: 'Times New Roman';
-    background: rgb(215, 244, 252);
-}
-
-.mainD {
-    background-image: url('https://images.genius.com/1f5ae0d1c2ef22462040c0c788355e51.1000x1000x1.jpg');
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 800px;
-    left: 400px;
-}
-
-.static {
-    text-align: center;
-    color: black;
-    font-weight: 700;
-    font-family: Cambria, Cochin, Georgia;
-}
-
-button {
-    border: none;
-    padding: 10px 0px 10px 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #eee;
+    font-family: cursive, sans-serif;
+  }
+  
+  #page-main {
+    position: relative;
+  }
+  
+  .commonBox {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #bdfff3;
+  }
+  
+  .button {
+    padding: 0 20px;
+    height: 30px;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 2px blue solid;
+    border-radius: 2px;
+    background: #011a75;
     color: white;
-    width: 250px;
-    background-color: black;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: yellow;
-    transform: scale(1.5);
-}
-
-#add {
-    background-color: greenyellow;
-    align-content: center;
-    position: relative;
+    cursor: pointer;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    height: 75px;
+    width: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffbdeb;
+  }
+  
+  @media (max-width: 600px) {
+    header {
+      flex-wrap: wrap;
+    }
+  }
+  
+  .logo {
+    width: 60px;
+    height: fit-content;
+  }
+  
+  @media (max-width: 650px) {
+    .logo {
+      margin-top: 15px;
+      width: 100%;
+      position: relative;
+    }
+  }
+  
+  .logo > img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    top: 50px;
-    left: 257px;
-}
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 650px) {
+    .logo > img {
+      margin: 0 auto;
+    }
+  }
+  
+  nav {
+    font-weight: 400;
+  }
 
-#subtract {
-    background-color: red;
-    align-content: center;
-    position: relative;
+  li {
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  @media (max-width: 650px) {
+    nav {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 50px;
+    }
+    nav li {
+      padding-bottom: 5px;
+    }
+  }
+  
+  nav > ul {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  @media (max-width: 650px) {
+    nav > ul {
+      flex-direction: column;
+    }
+  }
+  
+  #introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    top: 100px;
-}
-
-#save {
-    background-color: cyan;
-    position: relative;
+    height: 200px;
+    margin-top: 300px;
+  }
+  
+  #introduction > h2 {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+  }
+  
+  #introduction input[type='email'] {
+    max-width: 275px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  #introduction input[type='submit'] {
+    max-width: 175px;
+    width: 100%;
+    height: 30px;
+  }
+  
+  #introduction input[type='submit']:hover {
+    background-color: orange;
+    transition: background-color 0.5s;
+  }
+  
+  @media (max-width: 650px) {
+    #introduction {
+      margin-top: 120px;
+    }
+  }
+  
+  #introduction .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 20vw;
+    color: black;
+  }
+  
+  @media (max-width: 550px) {
+    #features .icon {
+      display: none;
+    }
+  }
+  
+  #features .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 125px;
+    width: 80vw;
+    padding: 5px;
+  }
+  
+  @media (max-width: 550px) {
+    #features .desc {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    #features {
+      margin-top: 0;
+    }
+  }
+  
+  #vid-des {
+    font-size: 2rem;
+    font-weight: 700;
     text-align: center;
-    right: 257px;
+    justify-content: center;
+  }
+  
+  #about-video {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #about-video > iframe {
+    max-width: 250px;
+    width: 100%;
+  }
+  
+  #pricing {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+  }
+  
+  .product > .level {
+    background-color: blue;
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  .product > h2 {
+    margin-top: 15px;
+  }
+  
+  .product > ol {
+    margin: 15px 0;
+  }
+  
+  .product > ol > li {
+    padding: 5px 0;
+  }
+  
+  .product > button {
+    border: 0;
+    margin: 15px 10px;
+    font-weight: 400;
+  }
+  
+  .product > button:hover {
+    background-color: orange;
+    transition: background-color 1s;
+  }
+  
+  @media (max-width: 800px) {
+    #pricing {
+      flex-direction: column;
+    }
+    .product {
+      max-width: 300px;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+  }
+  
+  footer {
+    margin-top: 30px;
+    background-color: #ddd;
+    padding: 15px;
+  }
+  
+  footer > ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  footer > ul > li {
+    padding: 0 10px;
+    justify-content: space-between;
     margin: auto;
-    top: 150px;
-}
+  }
+  
+  footer > span {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+    color: #444;
+  }
